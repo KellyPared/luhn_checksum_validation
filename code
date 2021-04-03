@@ -1,3 +1,6 @@
+'''Simple Checksum validation with a fixed length'''
+
+
 def check_input(dig):
     '''This function takes a random digit, and adds the sum of all digits.
     Before it does, it takes every other digit and dounbles it. If the doubled 
