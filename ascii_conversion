@@ -1,0 +1,12 @@
+#This program gets the ascii digit of a number
+
+import math
+chardigit = input("Enter a digit:" )
+answer = 0
+for char in chardigit:
+    answer += ord(char)
+print(answer)
+
+# The number 0 has the ascii of 48
+sum = answer - 48
+print(sum)
