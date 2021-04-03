@@ -1,0 +1,42 @@
+def check_input(dig):
+    '''This function takes a random digit, and adds the sum of all digits.
+    Before it does, it takes every other digit and dounbles it. If the doubled 
+    digit is greater than 10, it sums those digits.'''
+
+    digit_list = []
+    for each_num in dig:
+        each_num = int(each_num)
+        digit_list.append(each_num)
+
+    total_sum = 0
+    for i in range(0, len(digit_list)):
+        if i % 2:
+            num2 = digit_list[i] * 2
+            if num2 >= 10:
+                total_sum += 1 + num2 %10
+            else:
+                total_sum += num2
+        else :
+                num = digit_list[i]
+                total_sum += num
+    return total_sum
+
+def main():
+    while True:
+        random_digit = input("Enter any number : (type Q to quit)" )
+        digit_check = input("Enter in any single digit for verification.")
+        
+        if random_digit.upper() == "Q":
+            break
+        else:
+            check_digit = random_digit + digit_check
+            original = check_input(random_digit)
+            verified_number = check_input(check_digit)
+
+            if original + int(digit_check) == verified_number:
+                print(f"The original number {random_digit} .")
+                print(f"The sum of the original number is {original}")
+                print(f"The verification number is {check_digit}")
+                print(f"The number is verified {verified_number} .")
+
+main()
